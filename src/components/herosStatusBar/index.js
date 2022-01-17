@@ -2,8 +2,8 @@ import React from "react";
 
 function HeroStatusBar(){
     
-return (<div>
-    <h1>Hero's Journey</h1>
+return (<div className="main_header">
+    <h2>Hero's Journey</h2>
 </div>)
 
 }
