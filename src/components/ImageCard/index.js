@@ -1,11 +1,11 @@
 import React from "react";
 
-function ImageCard({src, alt, isHide}){
+function ImageCard({src, alt, isHide, handelShowModal}){
 
 return(
-    <div >
-     <img className={isHide? "image-card":"hide"} src={src} alt={alt}/>
-    </div>
+    
+     <img onClick={()=>{handelShowModal()}}className={isHide? "image-card":"hide"} src={src} alt={alt}/>
+    
 )
 
 }

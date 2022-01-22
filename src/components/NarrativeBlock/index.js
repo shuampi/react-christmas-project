@@ -2,7 +2,8 @@
 
 import React from "react";
 import ImageCard from "../ImageCard";
-function NarrativeBlock({ narrativeText, isHide }) {
+
+function NarrativeBlock({ narrativeText, isHide, handelShowModal}) {
   console.log(narrativeText);
 
   return (
@@ -20,9 +21,9 @@ function NarrativeBlock({ narrativeText, isHide }) {
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
           sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <ImageCard isHide={isHide} alt="a shield" src="/images/shield.jpg"/>
-        <ImageCard isHide={isHide} alt="a rope" src="/images/rope.jpg"/>
-        <ImageCard isHide={isHide} alt="a bag full of coins" src="/images/bagcoins2.jpg"/>
+        <ImageCard handelShowModal={handelShowModal} isHide={isHide} alt="a shield" src="/images/shield.jpg"/>
+        <ImageCard handelShowModal={handelShowModal} isHide={isHide} alt="a rope" src="/images/rope.jpg"/>
+        <ImageCard handelShowModal={handelShowModal} isHide={isHide} alt="a bag full of coins" src="/images/bagcoins2.jpg"/>
       </div>
     </div>
   );
