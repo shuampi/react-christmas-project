@@ -1,10 +1,10 @@
 import React from "react";
 
-function ImageCard(){
+function ImageCard({src, alt, isHide}){
 
 return(
-    <div className="image-card">
-     <img alt=""/>
+    <div >
+     <img className={isHide? "image-card":"hide-intro"} src={src} alt={alt}/>
     </div>
 )
 

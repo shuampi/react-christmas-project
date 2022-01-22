@@ -13,7 +13,7 @@ function App() {
   const [isHide, setIsHide] = useState(false);
 
   function handelIsHide() {
-    setIsHide(true);
+    setIsHide(!isHide);
   }
   function handelHeroName(thename) {
     setHeroName(thename);

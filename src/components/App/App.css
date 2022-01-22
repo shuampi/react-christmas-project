@@ -63,3 +63,8 @@ body {
   padding: 6% 5% 6% 10%;
   background-color: rgb(29, 93, 38);
 }
+.image-card{
+  max-width: 270px;
+  height: 207.54px;
+  margin: 3% 2% 3% 2%;
+}
