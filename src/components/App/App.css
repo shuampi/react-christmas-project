@@ -41,7 +41,7 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
-.hide-intro{
+.hide{
   display: none;
 }
 #hero-image{

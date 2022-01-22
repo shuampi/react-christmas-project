@@ -4,7 +4,7 @@ function ImageCard({src, alt, isHide}){
 
 return(
     <div >
-     <img className={isHide? "image-card":"hide-intro"} src={src} alt={alt}/>
+     <img className={isHide? "image-card":"hide"} src={src} alt={alt}/>
     </div>
 )
 

@@ -24,3 +24,8 @@ App:
 
       -ActionBar.
          button onclick= it will swap text
+           -ImageCard
+           -ImageCard
+           -ImageCard
+           
+      -SelectItemCard     
