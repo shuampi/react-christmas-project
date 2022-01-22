@@ -12,7 +12,15 @@ App.
      -Title of the chapter/events/etc.
      -Description of the story.
      -images.
+            a) Content component.this section will change the 
 
    3-ActionBar. All the user options will be display in here.
 
 
+App:
+      -HeroStatusBar.
+
+      -NarrativeBlock
+
+      -ActionBar.
+         button onclick= it will swap text

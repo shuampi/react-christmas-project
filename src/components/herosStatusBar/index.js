@@ -1,9 +1,9 @@
 import React from "react";
 
-function HeroStatusBar(){
-    
+function HeroStatusBar({heroName}){
+    console.log(heroName)
 return (<div className="main_header">
-    <h2>Hero's Journey</h2>
+    <h2>{heroName}'s Journey</h2>
 </div>)
 
 }

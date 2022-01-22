@@ -41,6 +41,9 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+.hide-intro{
+  display: none;
+}
 #hero-image{
     max-width: 40%;
     height: auto;
