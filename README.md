@@ -20,12 +20,12 @@ App.
 App:
       -HeroStatusBar.
 
-      -NarrativeBlock
-
+      -NarrativeBlock:
+           -ImageCard
+           -ImageCard
+           -ImageCard
       -ActionBar.
-         button onclick= it will swap text
-           -ImageCard
-           -ImageCard
-           -ImageCard
            
-      -SelectItemCard     
+      -SelectItemCard   
+
+      -Modal  

@@ -7,13 +7,25 @@ import ActionBar from "../ActionBar";
 import SelectItemCard from "../SelectItemCard";
 import Modal from "../Modal";
 import { useState } from "react";
-import { theStory } from "../storyChapterData";
+import { theStory, modalData } from "../storyChapterData";
 
 function App() {
   const [heroName, setHeroName] = useState("");
   const [narrativeText, setNarrativeText] = useState(theStory[0]);
   const [isHide, setIsHide] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [typeModal,setTypeModal]=useState(modalData)
+
+  function handelInfoModal (alt){
+    if(alt==="a shield"){
+      setTypeModal(modalData[0])
+    } else if (alt==="a rope"){
+      setTypeModal(modalData[1])
+    } else if (alt==="a bag of coins"){
+      setTypeModal(modalData[2])
+    }
+    
+  }
 
   function handelShowModal() {
     setShowModal(!showModal);
@@ -32,6 +44,7 @@ function App() {
     <div className="App">
       <HeroStatusBar heroName={heroName} />
       <NarrativeBlock
+        handelInfoModal={handelInfoModal}
         isHide={isHide}
         narrativeText={narrativeText}
         handelShowModal={handelShowModal}
@@ -49,9 +62,12 @@ function App() {
         value2="The Magic Rope"
         value3="A Bag Full Of Coins"
       />
-      <Modal showModal={showModal}
+      <Modal 
+         typeModal={typeModal}
+         showModal={showModal}
          handelShowModal={handelShowModal}
       />
+      
     </div>
   );
 }
