@@ -19,7 +19,7 @@ App.
 
 App:
       -HeroStatusBar.
-
+           -IconCard
       -NarrativeBlock:
            -ImageCard
            -ImageCard

@@ -10,7 +10,7 @@ import { useState } from "react";
 import { theStory, modalData } from "../storyChapterData";
 
 function App() {
-  const [heroName, setHeroName] = useState("");
+  const [heroName, setHeroName] = useState("Hero");
   const [narrativeText, setNarrativeText] = useState(theStory[0]);
   const [isHide, setIsHide] = useState(false);
   const [showModal, setShowModal] = useState(false);

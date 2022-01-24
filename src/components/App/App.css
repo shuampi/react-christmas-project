@@ -132,3 +132,7 @@ body {
 .modal p + p {
   margin-top: 1rem;
 }
+.icon-card{
+  max-width: 10%;
+  height: auto;
+}
