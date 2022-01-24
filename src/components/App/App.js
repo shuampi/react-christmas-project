@@ -50,6 +50,10 @@ function App() {
   function handelObjectIcon(item){
     if (item==="The Warrior Shield"){
       setTheSrc("/images/shield.jpg")
+    } else if (item==="The Magic Rope"){
+      setTheSrc("/images/rope.jpg")
+    }else if(item==="A Bag Full Of Coins"){
+      setTheSrc("/images/bagcoins2.jpg")
     }
 
   }

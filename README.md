@@ -43,8 +43,14 @@
 - Modal  
 
 ## Plan of actions.
->When the user select an object and click the submit button and icon of that object have to appear in the Hero status bar, how?
-- In SelectedItemComponent the value of the selection form has to be selected.
+>When the user select an object and click the submit button and icon of that object have to appear in the Hero status bar, how? ==> __DONE__
+- In SelectedItemComponent the value of the selection form has to be selected and the value it is store in a state.
+- at the top level create a function that handel the path of th src of the image, it stores the path in a state.
+>When selecting the object and click the submit button  it will changche the images of the objects and show the spells.
+- SelectItemCard of the object will hide.
+- add a SelectItemCard component. It will be hide until the button is click 
+- add another Modal component for the spells
+- ImageCard, decide if add three more or dynamically change the path of the images.
 
 
 
