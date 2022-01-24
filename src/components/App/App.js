@@ -15,6 +15,7 @@ function App() {
   const [isHide, setIsHide] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [typeModal,setTypeModal]=useState(modalData)
+  const [theSrc, setTheSrc]=useState("")
 
   function handelInfoModal (alt){
     if(alt==="a shield"){
@@ -34,15 +35,30 @@ function App() {
     setIsHide(!isHide);
   }
   function handelHeroName(thename) {
-    setHeroName(thename);
+    if (thename.length > 0 && thename.length <= 10) {
+      setHeroName(thename);
+      handelNarrativeText();
+      handelIsHide();
+    } else {
+      alert(`Please, insert a valid name`);
+    } 
   }
+
   function handelNarrativeText() {
     setNarrativeText(theStory[1]);
+  }
+  function handelObjectIcon(item){
+    if (item==="The Warrior Shield"){
+      setTheSrc("/images/shield.jpg")
+    }
+
   }
 
   return (
     <div className="App">
-      <HeroStatusBar heroName={heroName} />
+      <HeroStatusBar 
+      theSrc={theSrc}
+      heroName={heroName} />
       <NarrativeBlock
         handelInfoModal={handelInfoModal}
         isHide={isHide}
@@ -52,10 +68,10 @@ function App() {
       <ActionBar
         isHide={isHide}
         handelHeroName={handelHeroName}
-        handelNarrativeText={handelNarrativeText}
-        handelIsHide={handelIsHide}
+        
       />
       <SelectItemCard
+      handelObjectIcon={handelObjectIcon}
         isHide={isHide}
         label="Select an object:"
         value1="The Warrior Shield"

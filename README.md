@@ -5,7 +5,7 @@
 >This project was created based on another previous project that was coded in an imperative way using JavaScript. I intend to recreate the same project using React as a way to get a better understanding of this library.
 
 ## Structure
-#
+
 > The app is made of the following main components:
 
 
@@ -42,8 +42,15 @@
 
 - Modal  
 
+## Plan of actions.
+>When the user select an object and click the submit button and icon of that object have to appear in the Hero status bar, how?
+- In SelectedItemComponent the value of the selection form has to be selected.
+
+
+
+
 ## Things that I have learnt.
-#
+
 >In this section, I want to keep track of the things I learnt while working on this project as a way to reflect my learning process.
 
 - The way to pass data from child components to parent components is by using callback functions.

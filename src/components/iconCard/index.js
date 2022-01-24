@@ -1,9 +1,9 @@
 import React from "react";
 
-function IconCard (){
+function IconCard ({theSrc}){
 
     return(
-        <img className="icon-card" alt="" src=""/>
+        <img className="icon-card" alt="" src={theSrc}/>
     )
 }
 
