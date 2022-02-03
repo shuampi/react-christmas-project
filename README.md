@@ -64,3 +64,5 @@
 
 - Keep update the map tree for reference. you can easily get loss how component are connected and it really useful to have it on hand when you are passing data between components.
 
+-Creation of custom hooks, extract similar logic and avoid repeticion in the code. It makes the code cleaner.
+
