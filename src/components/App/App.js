@@ -7,14 +7,15 @@ import Modal from "../Modal";
 import { useState } from "react";
 import { theStory, modalData } from "../storyChapterData";
 import useHide from "../../Hooks/useHide";
+import useNarrativeText from "../../Hooks/useNarrativeText";
 
 function App() {
   const [heroName, setHeroName] = useState("Hero");
-  const [narrativeText, setNarrativeText] = useState(theStory[0]);
   const [showModal, setShowModal] = useState(false);
   const [typeModal, setTypeModal] = useState(modalData);
   const [theSrc, setTheSrc] = useState("");
   const { isHide, handelIsHide } = useHide();
+  const { narrativeText, handelText } = useNarrativeText(theStory, 0);
 
   function handelInfoModal(alt) {
     if (alt === "a shield") {
@@ -33,17 +34,13 @@ function App() {
   function handelHeroName(thename) {
     if (thename.length > 0 && thename.length <= 10) {
       setHeroName(thename);
-      handelNarrativeText();
-
+      handelText();
       handelIsHide();
     } else {
       alert(`Please, insert a valid name`);
     }
   }
 
-  function handelNarrativeText() {
-    setNarrativeText(theStory[1]);
-  }
   function handelObjectIcon(item) {
     if (item === "The Warrior Shield") {
       setTheSrc("/images/shield.jpg");

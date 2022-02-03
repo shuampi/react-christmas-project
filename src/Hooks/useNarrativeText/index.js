@@ -6,8 +6,11 @@ function useNarrativeText(storyText, i) {
 
   const [narrativeText, setNarrativeText] = useState(storyText[i]);
 
-  setNarrativeText(storyText[i+1]);
-  return {narrativeText}
+  function handelText(){
+    setNarrativeText(storyText[i+1]);
+  }
+  
+  return {narrativeText, handelText}
 }
 
 export default useNarrativeText;
