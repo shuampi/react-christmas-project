@@ -5,17 +5,14 @@ import ActionBar from "../ActionBar";
 import SelectItemCard from "../SelectItemCard";
 import Modal from "../Modal";
 import { useState } from "react";
-import { theStory, modalData } from "../storyChapterData";
-import useHide from "../../Hooks/useHide";
-import useNarrativeText from "../../Hooks/useNarrativeText";
+import { modalData } from "../storyChapterData";
+import useHeroName from "../../Hooks/useHeroName";
 
 function App() {
-  const [heroName, setHeroName] = useState("Hero");
   const [showModal, setShowModal] = useState(false);
   const [typeModal, setTypeModal] = useState(modalData);
   const [theSrc, setTheSrc] = useState("");
-  const { isHide, handelIsHide } = useHide();
-  const { narrativeText, handelText } = useNarrativeText(theStory, 0);
+  const { isHide, heroName, narrativeText, handelName } = useHeroName("Hero");
 
   function handelInfoModal(alt) {
     if (alt === "a shield") {
@@ -29,16 +26,6 @@ function App() {
 
   function handelShowModal() {
     setShowModal(!showModal);
-  }
-
-  function handelHeroName(thename) {
-    if (thename.length > 0 && thename.length <= 10) {
-      setHeroName(thename);
-      handelText();
-      handelIsHide();
-    } else {
-      alert(`Please, insert a valid name`);
-    }
   }
 
   function handelObjectIcon(item) {
@@ -60,7 +47,7 @@ function App() {
         narrativeText={narrativeText}
         handelShowModal={handelShowModal}
       />
-      <ActionBar isHide={isHide} handelHeroName={handelHeroName} />
+      <ActionBar isHide={isHide} handelName={handelName} />
       <SelectItemCard
         handelObjectIcon={handelObjectIcon}
         isHide={isHide}
