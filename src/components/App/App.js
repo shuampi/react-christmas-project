@@ -7,22 +7,14 @@ import Modal from "../Modal";
 import { useState } from "react";
 import { modalData } from "../storyChapterData";
 import useHeroName from "../../Hooks/useHeroName";
+import useTypeModal from "../../Hooks/useTypeModal";
 
 function App() {
   const [showModal, setShowModal] = useState(false);
-  const [typeModal, setTypeModal] = useState(modalData);
   const [theSrc, setTheSrc] = useState("");
   const { isHide, heroName, narrativeText, handelName } = useHeroName("Hero");
-
-  function handelInfoModal(alt) {
-    if (alt === "a shield") {
-      setTypeModal(modalData[0]);
-    } else if (alt === "a rope") {
-      setTypeModal(modalData[1]);
-    } else if (alt === "a bag of coins") {
-      setTypeModal(modalData[2]);
-    }
-  }
+  const {handelInfoModal,typeModal}=useTypeModal(modalData,0)
+ 
 
   function handelShowModal() {
     setShowModal(!showModal);
@@ -42,10 +34,11 @@ function App() {
     <div className="App">
       <HeroStatusBar theSrc={theSrc} heroName={heroName} />
       <NarrativeBlock
-        handelInfoModal={handelInfoModal}
+        handelInfoModal={handelInfoModal}//
         isHide={isHide}
         narrativeText={narrativeText}
         handelShowModal={handelShowModal}
+        modalData={modalData}
       />
       <ActionBar isHide={isHide} handelName={handelName} />
       <SelectItemCard
@@ -57,9 +50,9 @@ function App() {
         value3="A Bag Full Of Coins"
       />
       <Modal
-        typeModal={typeModal}
+        typeModal={typeModal}//
         showModal={showModal}
-        handelShowModal={handelShowModal}
+        handelShowModal={handelShowModal}//
       />
     </div>
   );

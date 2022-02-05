@@ -3,7 +3,7 @@
 import React from "react";
 import ImageCard from "../ImageCard";
 
-function NarrativeBlock({ narrativeText, isHide, handelShowModal,  handelInfoModal}) {
+function NarrativeBlock({ modalData,narrativeText, isHide, handelShowModal,  handelInfoModal}) {
  
 
   return (
@@ -21,9 +21,9 @@ function NarrativeBlock({ narrativeText, isHide, handelShowModal,  handelInfoMod
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
           sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <ImageCard handelInfoModal={handelInfoModal} handelShowModal={handelShowModal} isHide={isHide} alt="a shield" src="/images/shield.jpg"/>
-        <ImageCard handelInfoModal={handelInfoModal} handelShowModal={handelShowModal} isHide={isHide} alt="a rope" src="/images/rope.jpg"/>
-        <ImageCard handelInfoModal={handelInfoModal} handelShowModal={handelShowModal} isHide={isHide} alt="a bag of coins" src="/images/bagcoins2.jpg"/>
+        <ImageCard handelInfoModal={handelInfoModal} handelShowModal={handelShowModal} isHide={isHide} alt={modalData[0].alt} src={modalData[0].src}/>
+        <ImageCard handelInfoModal={handelInfoModal} handelShowModal={handelShowModal} isHide={isHide} alt={modalData[1].alt} src={modalData[1].src}/>
+        <ImageCard handelInfoModal={handelInfoModal} handelShowModal={handelShowModal} isHide={isHide} alt={modalData[2].alt} src={modalData[2].src}/>
       </div>
     </div>
   );
