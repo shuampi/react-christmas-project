@@ -1,15 +1,15 @@
-/** @format */
+
 
 import React from "react";
-//import { useContext } from "react";
-//import {ObjectsContext} from "../App/App.js"
+import { useContext } from "react";
+import {stateContext} from "../App/App.js"
 
-function ImageCard({ src, alt, isHide, handelShowModal,  handelInfoModal}) {
-  //const dispatch=useContext(ObjectsContext)
+function ImageCard({ src, alt, isHide,  handelInfoModal}) {
+  const dispatch=useContext(stateContext)
      return (
     <img
       onClick={() => {
-        handelShowModal();
+        dispatch({type:"showing modal"});
         //dispatch({type:{alt}})
         handelInfoModal(alt)
         console.log(alt)

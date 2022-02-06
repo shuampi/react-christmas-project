@@ -1,8 +1,13 @@
 import React from "react";
+import {useContext} from "react"
+import {stateContext} from "../App/App.js"
 
 
-function Modal({showModal, handelShowModal,typeModal}){
-return(
+function Modal({showModal,typeModal}){
+
+const dispatch=useContext(stateContext);
+
+  return(
     <div className={showModal?"modal":"hide" } id="shield-modal" data-modal-ref="shield">
       <div className="modal-dialog">
         <header className="modal-header">{typeModal.modalHeader}</header>
@@ -12,7 +17,7 @@ return(
           </p>
         </section>
         <footer className="modal-footer">
-          <button onClick={()=>{handelShowModal()}} className="close-modal" >Close</button>
+          <button onClick={()=>{dispatch({type:"hiding modal"})}} className="close-modal" >Close</button>
         </footer>
       </div>
     </div>
