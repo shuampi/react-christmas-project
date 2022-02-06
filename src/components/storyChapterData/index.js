@@ -39,3 +39,31 @@ export const modalData = [
     src: "/images/bagcoins2.jpg",
   },
 ];
+
+
+export const spellsModalData = [
+  {
+    item: "fire",
+    modalHeader: "The Fire Spell.",
+    modalText:
+      " THE FIRE SPELL description Lorem ipsum dolor sit amet consectetur adipisicing elit. Quorepellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum ",
+    alt: "a fire spell",
+    src: "/images/firespell.jpg",
+  },
+  {
+    item: "invisibility",
+    modalHeader: "The Invisibility Spell.",
+    modalText:
+      " THE INVISIBILITY SPELL description Lorem ipsum dolor sit amet consectetur adipisicing elit. Quorepellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum ",
+    alt: "a invisibility spell",
+    src: "/images/invisibilityspell.jpg",
+  },
+  {
+    item: "shrink",
+    modalHeader: "The Shrinking Spell.",
+    modalText:
+      " THE SHRINKING SPELL description Lorem ipsum dolor sit amet consectetur adipisicing elit. Quorepellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum ",
+    alt: "a shrinking spell",
+    src: "/images/shrinkspell.jpg",
+  },
+];

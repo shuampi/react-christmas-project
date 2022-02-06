@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SelectItemCard({value1, value2, value3, label, isHide, handelObjectIcon}){
+function SelectItemCard({value1, value2, value3, label, isHide, handelObjectIcon, handelSwapImages}){
   
   const [theItem,setTheItem]=useState(value1)
 
@@ -18,7 +18,7 @@ function SelectItemCard({value1, value2, value3, label, isHide, handelObjectIcon
           <option value={value2}>{value2}</option>
           <option value={value3}>{value3}</option>
         </select>
-        <button onClick={()=>{handelObjectIcon(theItem)}} type="button">Submit</button>
+        <button onClick={()=>{handelObjectIcon(theItem); handelSwapImages()}} type="button">Submit</button>
       </form>
     )
 }
