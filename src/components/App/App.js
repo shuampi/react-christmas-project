@@ -38,13 +38,8 @@ function App() {
     spellsModalData,
     0
   );
-  const [selectionImages, setSelectionImages] = useState(modalData);
-  const [state, dispatch] = useReducer(reducer, initialState);
 
-  function handelSwapImages() {
-    setSelectionImages(spellsModalData);
-    return selectionImages;
-  }
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   function handelObjectIcon(item) {
     if (item === "The Warrior Shield") {
@@ -61,15 +56,14 @@ function App() {
       <stateContext.Provider value={dispatch}>
         <HeroStatusBar theSrc={theSrc} heroName={heroName} />
         <NarrativeBlock
-          selectionImages={selectionImages}
-          handelInfoModal={handelInfoModal} //
+          selectionImages={state.selectionImages} ///
+          handelInfoModal={handelInfoModal}
           isHide={isHide}
           narrativeText={narrativeText}
           modalData={modalData}
         />
         <ActionBar isHide={isHide} handelName={handelName} />
         <SelectItemCard
-          handelSwapImages={handelSwapImages}
           handelObjectIcon={handelObjectIcon}
           isHide={isHide}
           label="Select an object:"

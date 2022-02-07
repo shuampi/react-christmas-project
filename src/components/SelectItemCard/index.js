@@ -1,14 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import {stateContext} from "../App/App.js"
 
-function SelectItemCard({value1, value2, value3, label, isHide, handelObjectIcon, handelSwapImages}){
+function SelectItemCard({value1, value2, value3, label, isHide, handelObjectIcon}){
   
-  const [theItem,setTheItem]=useState(value1)
+  const [theItem,setTheItem]=useState(value1);
 
   function handelChange(event){
       setTheItem(event.target.value)
-  }
+  };
 
-  console.log(theItem)
+const banana=useContext(stateContext);
 
   return(
         <form className={isHide? "show-input-window":"hide"} >
@@ -18,7 +19,7 @@ function SelectItemCard({value1, value2, value3, label, isHide, handelObjectIcon
           <option value={value2}>{value2}</option>
           <option value={value3}>{value3}</option>
         </select>
-        <button onClick={()=>{handelObjectIcon(theItem); handelSwapImages()}} type="button">Submit</button>
+        <button onClick={()=>{handelObjectIcon(theItem); banana({type:"swaping images"})}} type="button">Submit</button>
       </form>
     )
 }
