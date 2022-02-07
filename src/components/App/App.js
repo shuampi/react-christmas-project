@@ -4,12 +4,12 @@ import NarrativeBlock from "../NarrativeBlock";
 import ActionBar from "../ActionBar";
 import SelectItemCard from "../SelectItemCard";
 import Modal from "../Modal";
-import { useState, useReducer } from "react";
+import { useReducer } from "react";
 import React from "react";
 import { modalData, spellsModalData } from "../storyChapterData";
 import useHeroName from "../../Hooks/useHeroName";
 import useTypeModal from "../../Hooks/useTypeModal";
-
+import useIconImages from "../../Hooks/useIconImages";
 export const stateContext = React.createContext();
 
 const initialState = {
@@ -31,32 +31,17 @@ function reducer(state, action) {
 }
 
 function App() {
-  const [theSrc, setTheSrc] = useState("");
   const { isHide, heroName, narrativeText, handelName } = useHeroName("Hero");
-  const { handelInfoModal, typeModal } = useTypeModal(
-    modalData,
-    spellsModalData,
-    0
-  );
-
+  const { handelInfoModal, typeModal } = useTypeModal(modalData, spellsModalData,0 );
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  function handelObjectIcon(item) {
-    if (item === "The Warrior Shield") {
-      setTheSrc("/images/shield.jpg");
-    } else if (item === "The Magic Rope") {
-      setTheSrc("/images/rope.jpg");
-    } else if (item === "A Bag Full Of Coins") {
-      setTheSrc("/images/bagcoins2.jpg");
-    }
-  }
+  const { theSrc, handelObjectIcon } = useIconImages({ state }); //use {} when you want use a property
 
   return (
     <div className="App">
       <stateContext.Provider value={dispatch}>
         <HeroStatusBar theSrc={theSrc} heroName={heroName} />
         <NarrativeBlock
-          selectionImages={state.selectionImages} ///
+          selectionImages={state.selectionImages} 
           handelInfoModal={handelInfoModal}
           isHide={isHide}
           narrativeText={narrativeText}
@@ -67,9 +52,9 @@ function App() {
           handelObjectIcon={handelObjectIcon}
           isHide={isHide}
           label="Select an object:"
-          value1="The Warrior Shield"
-          value2="The Magic Rope"
-          value3="A Bag Full Of Coins"
+          value1={state.selectionImages[0].modalHeader}
+          value2={state.selectionImages[1].modalHeader}
+          value3={state.selectionImages[2].modalHeader}
         />
         <Modal
           typeModal={typeModal} //
