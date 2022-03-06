@@ -54,6 +54,7 @@ body {
 #hero-description{
     
     margin: 3% 5% 3% 5%;
+    text-align: justify;
 
 }
 .show-input-window{

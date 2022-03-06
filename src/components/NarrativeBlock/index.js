@@ -29,24 +29,15 @@ function NarrativeBlock({
           fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
           sunt in culpa qui officia deserunt mollit anim id est laborum.
         </p>
-        <ImageCard
-          handelInfoModal={handelInfoModal}
-          isHide={isHide}
-          alt={selectionImages[0].alt}
-          src={selectionImages[0].src}
-        />
-        <ImageCard
-          handelInfoModal={handelInfoModal}
-          isHide={isHide}
-          alt={selectionImages[1].alt}
-          src={selectionImages[1].src}
-        />
-        <ImageCard
-          handelInfoModal={handelInfoModal}
-          isHide={isHide}
-          alt={selectionImages[2].alt}
-          src={selectionImages[2].src}
-        />
+        {/*refactor */}
+        {selectionImages.map((item) => (
+          <ImageCard
+            handelInfoModal={handelInfoModal}
+            isHide={isHide}
+            alt={item.alt}
+            src={item.src}
+          />
+        ))}
       </div>
     </div>
   );

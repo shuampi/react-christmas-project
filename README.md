@@ -32,6 +32,7 @@
 - **App:**
 - HeroStatusBar.
      - IconCard
+     - IconCard.
 - NarrativeBlock:
      - ImageCard
      - ImageCard
@@ -66,4 +67,6 @@
 
 -Creation of custom hooks, extract similar logic and avoid repeticion in the code. It makes the code cleaner.
 custome hooks can be called inside other hooks.
+
+-useContext hook with useReducer helps to keep a tidy code and readeable.
 

@@ -10,6 +10,7 @@ import { modalData, spellsModalData } from "../storyChapterData";
 import useHeroName from "../../Hooks/useHeroName";
 import useTypeModal from "../../Hooks/useTypeModal";
 import useIconImages from "../../Hooks/useIconImages";
+
 export const stateContext = React.createContext();
 
 const initialState = {
@@ -48,7 +49,8 @@ function App() {
           modalData={modalData}
         />
         <ActionBar isHide={isHide} handelName={handelName} />
-        <SelectItemCard
+        {/* selection of an item */}
+        <SelectItemCard 
           handelObjectIcon={handelObjectIcon}
           isHide={isHide}
           label="Select an object:"
