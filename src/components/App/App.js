@@ -4,7 +4,7 @@ import NarrativeBlock from "../NarrativeBlock";
 import ActionBar from "../ActionBar";
 import SelectItemCard from "../SelectItemCard";
 import Modal from "../Modal";
-import { useReducer } from "react";
+import { useReducer} from "react";
 import React from "react";
 import { modalData, spellsModalData } from "../storyChapterData";
 import useHeroName from "../../Hooks/useHeroName";
@@ -32,15 +32,15 @@ function reducer(state, action) {
 }
 
 function App() {
-  const { isHide, heroName, narrativeText, handelName } = useHeroName("Hero");
+  const { isHide,showItemCard, heroName, narrativeText, handelName,handelIsShow } = useHeroName("Hero");
   const { handelInfoModal, typeModal } = useTypeModal(modalData, spellsModalData,0 );
   const [state, dispatch] = useReducer(reducer, initialState);
-  const { theSrc, handelObjectIcon } = useIconImages({ state }); //use {} when you want use a property
-
+  const { theSrc,spellSrc,handelSpellIcon, handelObjectIcon } = useIconImages(modalData,spellsModalData); //use {} when you want use a property
+  
   return (
     <div className="App">
       <stateContext.Provider value={dispatch}>
-        <HeroStatusBar theSrc={theSrc} heroName={heroName} />
+        <HeroStatusBar theSrc={theSrc} spellSrc={spellSrc} heroName={heroName} />
         <NarrativeBlock
           selectionImages={state.selectionImages} 
           handelInfoModal={handelInfoModal}
@@ -49,10 +49,12 @@ function App() {
           modalData={modalData}
         />
         <ActionBar isHide={isHide} handelName={handelName} />
-        {/* selection of an item */}
+        {/* selection of an object and spell*/}
         <SelectItemCard 
+        handelIsShow={handelIsShow}
+        handelSpellIcon={handelSpellIcon}
           handelObjectIcon={handelObjectIcon}
-          isHide={isHide}
+           showCard={showItemCard}
           label="Select an object:"
           value1={state.selectionImages[0].modalHeader}
           value2={state.selectionImages[1].modalHeader}

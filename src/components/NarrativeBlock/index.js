@@ -36,6 +36,7 @@ function NarrativeBlock({
             isHide={isHide}
             alt={item.alt}
             src={item.src}
+            key={item.item}
           />
         ))}
       </div>
