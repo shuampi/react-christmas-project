@@ -55,11 +55,13 @@ function App() {
     handelIsShow
   ); //use {} when you want use a property
   const [hideText, setHideText] = useState(false);
+  const [hideAction, setHideAction] = useState(false);
   const [textChapter, setTextChapter] = useState(theStory[2]);
 
-  //  function handelTextChapter(){ needed for later
-  //    setTextChapter(theSrc[2+1])
-  //  }
+   function handelTextChapter(i){ 
+     setTextChapter(theStory[i+1])
+   };
+   
   return (
     <div className="App">
       <stateContext.Provider value={dispatch}>
@@ -80,6 +82,7 @@ function App() {
         <ActionBar isHide={isHide} handelName={handelName} />
         {/* selection of an object and spell*/}
         <SelectItemCard
+        setHideAction={setHideAction}
           setHideText={setHideText}
           handelShowImg={handelShowImg}
           handelIsShow={handelIsShow}
@@ -91,8 +94,8 @@ function App() {
           value2={state.selectionImages[1].modalHeader}
           value3={state.selectionImages[2].modalHeader}
         />
-        <SecondNarrativeBlock showText={hideText} textChapter={textChapter} />
-        <SecondActionMenu showMenu={hideText} />
+        <SecondNarrativeBlock showText={hideText} textChapter={textChapter}/>
+        <SecondActionMenu setHideAction={setHideAction} showMenu={hideAction}  handelTextChapter={handelTextChapter}/>
         <Modal
           typeModal={typeModal} //
           showModal={state.showModal}
