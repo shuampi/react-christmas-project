@@ -8,10 +8,11 @@ function NarrativeBlock({
   isHide,
   handelInfoModal,
   selectionImages,
-  showImg
+  showImg,
+  hideText
 }) {
   return (
-    <div>
+    <div className={hideText? "hide":""}>
       <h1 id="chapter_header">{narrativeText.chapterHeader}</h1>
       <p id="chapter_text">{narrativeText.chapterText}</p>
       <div className="content">

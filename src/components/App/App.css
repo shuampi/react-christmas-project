@@ -9,22 +9,40 @@
   --align-center: center;
   --greentheme: rgb(29, 93, 38)
 }
+*{
+  box-sizing: border-box;
+}
 body {
   background-color: var(--main-bg-color);
   font-family: var(--font-style);
   color:var(--font-color);
-  max-width: 900px;
-  margin: auto;
-  
+ 
+  margin: 0 auto;
+  max-width: 70%;
+}
+button{
+  font-size: 1rem;
+border-radius: 5%;
+border:none; 
+padding: 0.75em 1.3em;
+margin: 0 0.5em;
+background-color: #5C1C2D;
+color:white;
+
+}
+button:hover{
+  background-color:#A8133A ;
+  cursor: pointer;
 }
 .main_header{
     display: flex;
     justify-content: space-evenly;
     text-align: var(--align-center);
-    font-size:x-large ;
-    background-color: rgb(29, 93, 38);
+    font-size:4.5vmin;
+    background-color: #1d5d26;
     font-weight:bold;
     padding: 3%;
+    width:100%;
     color: black;
     
 }
@@ -35,6 +53,7 @@ body {
 }
 #chapter_text{
     text-align: justify;
+font-size: 1rem;
     padding: 5px 20px 5px 20px;
 }
 .content{

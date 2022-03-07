@@ -10,7 +10,8 @@ function SelectItemCard({
   handelObjectIcon,
   handelSpellIcon,
   handelIsShow,
-  handelShowImg
+  handelShowImg,
+  setHideText
 }) {
   const [theItem, setTheItem] = useState("");
   const [showform, setShowForm]=useState(false);
@@ -91,6 +92,7 @@ function handelShowForm(){
           handelSpells()
         handelShowForm()
         handelShowImg()
+        setHideText(true)
         }}
         type="button"
       >

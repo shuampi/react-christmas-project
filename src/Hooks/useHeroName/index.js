@@ -24,7 +24,7 @@ const { narrativeText, handelText } = useNarrativeText(theStory, 0);
       return alert(`Please, insert a valid name`);
     }
   }
-  return { isHide,showItemCard, heroName,showImg,handelShowImg, narrativeText, handelName, handelIsShow };
+  return { isHide,showItemCard, heroName,showImg,handelShowImg, narrativeText, handelName, handelIsShow,handelText };
 }
 
 export default useHeroName;
