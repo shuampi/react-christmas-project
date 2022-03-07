@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { stateContext } from "../App/App.js";
 
-function ImageCard({ src, alt, isHide, handelInfoModal }) {
+function ImageCard({ src, alt, showImg, handelInfoModal }) {
   const dispatch = useContext(stateContext);
   return (
     <img
@@ -12,7 +12,7 @@ function ImageCard({ src, alt, isHide, handelInfoModal }) {
         handelInfoModal(alt);
         console.log(alt);
       }}
-      className={isHide ? "image-card" : "hide"}
+      className={showImg ? "image-card" : "hide"}
       src={src}
       alt={alt}
     />

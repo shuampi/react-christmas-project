@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function useIconImages(modalData, spellsModalData) {
+function useIconImages(modalData, spellsModalData,handelIsShow) {
   const [theSrc, setTheSrc] = useState("");
   const [spellSrc, setSpellSrc] = useState("");
 
@@ -12,7 +12,7 @@ function useIconImages(modalData, spellsModalData) {
     } else if (item === modalData[2].modalHeader) {
       setTheSrc(modalData[2].src);
     }
-    console.log(`theSrc in useiconimgage:${theSrc}`);
+  
   }
   function handelSpellIcon(item) {
     if (item === spellsModalData[0].modalHeader) {
@@ -22,6 +22,7 @@ function useIconImages(modalData, spellsModalData) {
     } else if (item === spellsModalData[2].modalHeader) {
       setSpellSrc(spellsModalData[2].src);
     }
+  
   }
 
   return { theSrc, spellSrc, handelObjectIcon, handelSpellIcon };

@@ -8,6 +8,7 @@ function NarrativeBlock({
   isHide,
   handelInfoModal,
   selectionImages,
+  showImg
 }) {
   return (
     <div>
@@ -33,7 +34,7 @@ function NarrativeBlock({
         {selectionImages.map((item) => (
           <ImageCard
             handelInfoModal={handelInfoModal}
-            isHide={isHide}
+            showImg={showImg}
             alt={item.alt}
             src={item.src}
             key={item.item}
