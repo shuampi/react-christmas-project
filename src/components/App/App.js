@@ -12,6 +12,7 @@ import useTypeModal from "../../Hooks/useTypeModal";
 import useIconImages from "../../Hooks/useIconImages";
 import SecondNarrativeBlock from "../SecondNarrativeBlock";
 import SecondActionMenu from "../SecondActionMenu";
+import BattleModal from "../BattleModal";
 export const stateContext = React.createContext();
 
 const initialState = {
@@ -57,10 +58,13 @@ function App() {
   const [hideText, setHideText] = useState(false);
   const [hideAction, setHideAction] = useState(false);
   const [textChapter, setTextChapter] = useState(theStory[2]);
-
+  const [showBattleModal, setShowBattleModal] = useState(false);
   function handelTextChapter(i) {
     setTextChapter(theStory[i + 1]);
-  }
+  };
+  function handelBattleModal(){
+    setShowBattleModal(true)
+  };
 
   return (
     <div className="App">
@@ -96,6 +100,7 @@ function App() {
         />
         <SecondNarrativeBlock showText={hideText} textChapter={textChapter} />
         <SecondActionMenu
+          battleModal={handelBattleModal}
           objectSelected={theSrc}
           setHideAction={setHideAction}
           showMenu={hideAction}
@@ -105,6 +110,10 @@ function App() {
           typeModal={typeModal} //
           showModal={state.showModal}
         />
+        <BattleModal
+          showBattleModal={showBattleModal}
+        />
+
       </stateContext.Provider>
     </div>
   );

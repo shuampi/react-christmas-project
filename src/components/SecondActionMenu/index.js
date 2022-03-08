@@ -2,7 +2,9 @@ import React from "react";
 import swal from 'sweetalert';
 import style from "./style.module.css";
 import { useState } from "react";
-function SecondActionMenu({ showMenu, handelTextChapter, setHideAction,objectSelected }) {
+
+
+function SecondActionMenu({ battleModal,showMenu, handelTextChapter, setHideAction,objectSelected }) {
   const [showOption, setShowOption] = useState(false);
   const [showGameOver, setShowGameOver] = useState(false);
   const [showFightOptions, setShowFightOptions] = useState(false);
@@ -74,7 +76,13 @@ handelTextChapter(5)
         >
           Use the rope
         </button>
-        <button type="button">Melee Attack.</button>
+{/* create a modal will appear when click melee attack button:
+  1. create a modal
+  2 add functionality:  */}
+
+        <button type="button" onClick={() => {
+        battleModal()
+          }}>Melee Attack.</button>
       </form>
     </>
   );
