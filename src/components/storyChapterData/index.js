@@ -28,8 +28,19 @@ export const theStory = [
     chapterHeader:"Lost in the Forest.",
     chapterText:"You carry on your way and ignored the fight. You get lost in the big forest and die. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deseruntmollit anim id est laborum.",
     src:"/images/lostforest.jpg"
+  },
+  {
+    chapter:5,
+    chapterHeader:"Time to fight.",
+    chapterText:"If you have the rope you can use it to win automaticatlly or you can figth in a mele attact. You will throw a dice if you get a 1 you lose, a 2 try again, the rest you win the battle. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deseruntmollit anim id est laborum.",
+    src:"/images/goblin.jpg"
+  },
+  {
+    chapter:6,
+    chapterHeader:"A Valuable Help.",
+    chapterText:"You defeated the goblin and the old man will help you to find a safe way in the forest. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacommodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sintoccaecat cupidatat non proident, sunt in culpa qui officia deseruntmollit anim id est laborum.",
+    src:"/images/oldmanForest.jfif"
   }
-  
 ];
 
 export const modalData = [

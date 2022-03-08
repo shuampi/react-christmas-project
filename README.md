@@ -69,4 +69,5 @@
 custome hooks can be called inside other hooks.
 
 -useContext hook with useReducer helps to keep a tidy code and readeable.
-
+sweat alert to modify alert windows.
+https://github.com/t4t5/sweetalert
