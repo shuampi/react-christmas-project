@@ -59,11 +59,22 @@ function App() {
   const [hideAction, setHideAction] = useState(false);
   const [textChapter, setTextChapter] = useState(theStory[2]);
   const [showBattleModal, setShowBattleModal] = useState(false);
+  const [showGameOver, setShowGameOver] = useState(false);
+  const [showFightOptions, setShowFightOptions] = useState(false);
+  
+  function handelFightOptions(){
+    setShowFightOptions(!showFightOptions)
+  };
+
+  function handelGameOver(){
+    setShowGameOver(!showGameOver)
+  }
+
   function handelTextChapter(i) {
     setTextChapter(theStory[i + 1]);
   };
   function handelBattleModal(){
-    setShowBattleModal(true)
+    setShowBattleModal(!showBattleModal)
   };
 
   return (
@@ -100,6 +111,10 @@ function App() {
         />
         <SecondNarrativeBlock showText={hideText} textChapter={textChapter} />
         <SecondActionMenu
+        showFightOptions={showFightOptions}
+        handelFightOptions={handelFightOptions}
+        showGameOver={showGameOver}
+        handelGameOver={handelGameOver}
           battleModal={handelBattleModal}
           objectSelected={theSrc}
           setHideAction={setHideAction}
@@ -107,11 +122,16 @@ function App() {
           handelTextChapter={handelTextChapter}
         />
         <Modal
+       
           typeModal={typeModal} //
           showModal={state.showModal}
         />
         <BattleModal
+        handelFightOptions={handelFightOptions}
+         handelGameOver={handelGameOver}
+          text={handelTextChapter}
           showBattleModal={showBattleModal}
+          battleModal={handelBattleModal}
         />
 
       </stateContext.Provider>
