@@ -62,25 +62,25 @@ function App() {
   const [showGameOver, setShowGameOver] = useState(false);
   const [showFightOptions, setShowFightOptions] = useState(false);
   const [showWayOutForest, setShowWayOutForest] = useState(false);
-  
-  function handelWayOutForest(){
-    setShowWayOutForest(!showWayOutForest)
-  };
 
-  function handelFightOptions(){
-    setShowFightOptions(!showFightOptions)
-  };
+  function handelWayOutForest() {
+    setShowWayOutForest(!showWayOutForest);
+  }
 
-  function handelGameOver(){
-    setShowGameOver(!showGameOver)
+  function handelFightOptions() {
+    setShowFightOptions(!showFightOptions);
+  }
+
+  function handelGameOver() {
+    setShowGameOver(!showGameOver);
   }
 
   function handelTextChapter(i) {
     setTextChapter(theStory[i + 1]);
-  };
-  function handelBattleModal(){
-    setShowBattleModal(!showBattleModal)
-  };
+  }
+  function handelBattleModal() {
+    setShowBattleModal(!showBattleModal);
+  }
 
   return (
     <div className="App">
@@ -116,12 +116,12 @@ function App() {
         />
         <SecondNarrativeBlock showText={hideText} textChapter={textChapter} />
         <SecondActionMenu
-        showWayOutForest={showWayOutForest}
-        handelWayOutForest={handelWayOutForest}
-        showFightOptions={showFightOptions}
-        handelFightOptions={handelFightOptions}
-        showGameOver={showGameOver}
-        handelGameOver={handelGameOver}
+          showWayOutForest={showWayOutForest}
+          handelWayOutForest={handelWayOutForest}
+          showFightOptions={showFightOptions}
+          handelFightOptions={handelFightOptions}
+          showGameOver={showGameOver}
+          handelGameOver={handelGameOver}
           battleModal={handelBattleModal}
           objectSelected={theSrc}
           setHideAction={setHideAction}
@@ -129,19 +129,17 @@ function App() {
           handelTextChapter={handelTextChapter}
         />
         <Modal
-       
           typeModal={typeModal} //
           showModal={state.showModal}
         />
         <BattleModal
-        handelWayOutForest={handelWayOutForest}
-        handelFightOptions={handelFightOptions}
-         handelGameOver={handelGameOver}
+          handelWayOutForest={handelWayOutForest}
+          handelFightOptions={handelFightOptions}
+          handelGameOver={handelGameOver}
           text={handelTextChapter}
           showBattleModal={showBattleModal}
           battleModal={handelBattleModal}
         />
-
       </stateContext.Provider>
     </div>
   );
