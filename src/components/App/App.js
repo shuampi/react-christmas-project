@@ -61,7 +61,12 @@ function App() {
   const [showBattleModal, setShowBattleModal] = useState(false);
   const [showGameOver, setShowGameOver] = useState(false);
   const [showFightOptions, setShowFightOptions] = useState(false);
+  const [showWayOutForest, setShowWayOutForest] = useState(false);
   
+  function handelWayOutForest(){
+    setShowWayOutForest(!showWayOutForest)
+  };
+
   function handelFightOptions(){
     setShowFightOptions(!showFightOptions)
   };
@@ -111,6 +116,8 @@ function App() {
         />
         <SecondNarrativeBlock showText={hideText} textChapter={textChapter} />
         <SecondActionMenu
+        showWayOutForest={showWayOutForest}
+        handelWayOutForest={handelWayOutForest}
         showFightOptions={showFightOptions}
         handelFightOptions={handelFightOptions}
         showGameOver={showGameOver}
@@ -127,6 +134,7 @@ function App() {
           showModal={state.showModal}
         />
         <BattleModal
+        handelWayOutForest={handelWayOutForest}
         handelFightOptions={handelFightOptions}
          handelGameOver={handelGameOver}
           text={handelTextChapter}

@@ -12,11 +12,15 @@ function SecondActionMenu({
   showGameOver,
   handelGameOver,
   handelFightOptions,
-  showFightOptions
+  showFightOptions,
+  showWayOutForest,
+  handelWayOutForest
 }) {
   const [showOption, setShowOption] = useState(false);
   // const [showGameOver, setShowGameOver] = useState(false);
   // const [showFightOptions, setShowFightOptions] = useState(false);
+  const[showFinalChapter,setShowFinalChapter]=useState(false)
+  
   function refreshPage() {
     window.location.reload(false);
   }
@@ -24,6 +28,8 @@ function SecondActionMenu({
   function checkYouHaveARope(item) {
     if (item === "/images/rope.jpg") {
       handelTextChapter(5);
+      handelFightOptions()
+      handelWayOutForest()
     } else {
       swal(`You don't have the magic rope!`);
     }
@@ -85,7 +91,8 @@ function SecondActionMenu({
         <button
           type="button"
           onClick={() => {
-            checkYouHaveARope(objectSelected);
+            checkYouHaveARope(objectSelected)
+            
           }}
         >
           Use the rope
@@ -103,6 +110,29 @@ function SecondActionMenu({
           Melee Attack.
         </button>
       </form>
+
+      <form className={showWayOutForest? "show-input-window" : "hide"}>
+        <button
+          type="button"
+          onClick={() => {
+            handelTextChapter(7);
+            setShowFinalChapter(true)
+            handelWayOutForest()
+          }}
+        >
+          Continue.
+        </button>
+      </form>
+      <form className={showFinalChapter? "show-input-window" : "hide"}>
+        <button
+          type="button"
+          onClick={() => {
+            refreshPage()          }}
+        >
+          Retry Again.
+        </button>
+      </form>
+      
     </>
   );
 }

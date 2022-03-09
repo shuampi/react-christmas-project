@@ -9,6 +9,7 @@ function BattleModal({
   battleModal,
   handelGameOver,
   handelFightOptions,
+  handelWayOutForest
 }) {
   /* function that generate a number between 1 to 6 randomly
         it will check the resul
@@ -24,21 +25,27 @@ function BattleModal({
   // }
 
   function throwDice() {
-    const dice = Math.floor(Math.random() * 6 + 1);
+    const dice = Math.floor(Math.random() * 5 + 1);
     console.log(`dice:${dice}`);
     if (dice === 1) {
       text(6);
-      swal(`${dice} you lose`);
+      swal(`You get ${dice}, sorry you lose...`);
       battleModal();
       handelGameOver();
       handelFightOptions();
       console.log(`you lose! ${dice}`);
       return dice;
     } else if (dice === 2) {
+        swal (`You got ${dice},you can try it one more time`)
       console.log(`you get  ${dice}`);
       return dice;
-    } else if (dice < 4) {
-      console.log(`you win  ${dice}`);
+    } else if (dice < 6) {
+        swal(`Congratulations you got ${dice}!,you win the battle!`)
+        handelWayOutForest()
+        text(5);
+        battleModal();
+        handelFightOptions();
+        console.log(`you win  ${dice}`);
       return dice;
     }
   }
