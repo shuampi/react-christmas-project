@@ -124,13 +124,16 @@ function SecondActionMenu({
         </button>
       </form>
       <form className={showFinalChapter? "show-input-window" : "hide"}>
+      <div className={style.finish}>
+      <h1>Congratulations!, You successfully arrived to your destiny and saved the village.</h1>
         <button
           type="button"
           onClick={() => {
             refreshPage()          }}
         >
-          Retry Again.
+          Retry.
         </button>
+        </div>
       </form>
       
     </>
