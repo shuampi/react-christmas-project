@@ -1,5 +1,5 @@
 # Heroe's Journey
-A MVP app game inspired in gamebooks where the reader participates in the story by making choices. It was created as a personal project in a way to learn Reactjs, and help met o get a deep understanding of this library. 
+A MVP app game inspired in gamebooks where the reader participates in the story by making choices. It was created as a personal project in a way to learn Reactjs, and help met to get a deep understanding of this library. 
 ## Installation.
 Create a directory, clone this repository, and initialise the project.
 
