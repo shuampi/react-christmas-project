@@ -18,7 +18,7 @@ In this project, I wanted to create a gamebook app in a medieval-fantasy world w
 When I started this project I faced the problems of the limitation of my knowledge of React, but it was a good experience to experiment with the characteristics of the library and I felt free to try new things. It was very rewarding to be able to create this app from scratch after solving countless problems in its development. The computational thinking approach was helpful to break down these problems into small ones that were easier to solve, and in the end to get the desired result. 
 
 
-This project is far to be completly finish, and it is my intention to keep working on it expanding the storyline of the game, improving its design, refactor the code, and implementing testing to make it more robust. 
+This project is far to be completly finish, and it is my intention to keep working on it expanding the storyline of the game, improving its design, refactoring the code, and implementing testing to make it more robust. 
 
 
 
